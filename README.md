@@ -51,10 +51,11 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-### 2. Install Requirements
+### 2. Install Requirements and add dataset
 ```bash
 pip install -r requirements.txt
 ```
+The dataset is within gitignore, so for local execution, place the appointments.csv file within data/
 
 ### 3. Model Training (Offline)
 ```bash
