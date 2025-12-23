@@ -70,5 +70,6 @@ So XGBoost yields ~**3×** the no-show capture compared to random selection and 
 ## Limitations and what I would improve with more time
 - The dataset lacks richer context (e.g., appointment type, provider, distance, prior attendance history). These are likely important drivers of no-shows.
 - I intentionally avoided patient history features to prevent leakage; with more time, I would implement **time-aware historical features** (e.g., prior no-show rate) using strict chronological splits.
-- I would run **cross-validation** and light hyperparameter tuning, and add **probability calibration** and/or decision-threshold optimization aligned to clinic capacity and cost tradeoffs.
-- I would also evaluate fairness and subgroup performance (e.g., across neighborhoods or socioeconomic proxies) to ensure the model does not amplify disparities.
+- I would run **cross-validation** and light hyperparameter tuning, and add **probability calibration** 
+- I would also evaluate fairness/bias and subgroup performance (e.g., across neighborhoods or socioeconomic proxies) to ensure the model does not amplify disparities.
+- I would deploy on GCP cloudrun, build a streamlit/ react frontend and host models on Vertex AI
