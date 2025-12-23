@@ -12,33 +12,10 @@ The system includes:
 ---
 
 ## Project Structure
-delty/
-│
-├── data/
-│ └── appointments.csv # Input dataset
-│
-├── notebooks/
-│ └── delty.ipynb # EDA, feature analysis, experiments
-│
-├── model/
-│ ├── logreg.pkl # Trained logistic regression model
-│ ├── gbm.pkl # Trained gradient boosting model
-│ └── preprocessor.pkl # Feature preprocessing pipeline
-│
-├── src/
-│ ├── init.py
-│ ├── data.py # Data loading utilities
-│ ├── features.py # Shared feature engineering (train + inference)
-│ ├── train.py # Model training and saving
-│ ├── predict.py # Inference logic
-│ └── main.py # FastAPI application
-├── reports/
-│ └── report.md # Model evaluation and discussion
-│── Dockerfile
-├── requirements.txt
-└── README.md
+![structure.png](assets/structure.png)
 
-Please refer to notebooks/delty.ipynb for complete deliverables of Part 1 and Part 2. Part 3 and Part 4 requirements can be found in this repository
+Please refer to notebooks/delty.ipynb for complete deliverables of Part 1 and Part 2. 
+Part 3 and Part 4 requirements can be found in this repository
 
 ---
 
@@ -96,4 +73,24 @@ Sample payload:
   "AppointmentDay": "2016-04-30T00:00:00Z"
 }
 
+```
+```bash
+curl -X 'POST' \
+  'http://127.0.0.1:8000/predict' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "Gender": "F",
+  "Age": 45,
+  "Neighbourhood": "JARDIM DA PENHA",
+  "OnGovtWelfareBenefits": 0,
+  "Hypertension": 1,
+  "Diabetes": 0,
+  "Alcoholism": 0,
+  "Handicapped": 0,
+  "SMS_received": 1,
+  "ScheduledDay": "2016-04-25T09:00:00Z",
+  "AppointmentDay": "2016-04-30T00:00:00Z"
+}
+'
 ```
